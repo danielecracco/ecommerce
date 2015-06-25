@@ -52,7 +52,8 @@ a#scrollUp {
   bottom: 0px;
   right: 10px;
   padding: 5px 10px;
-  background: #FE980F;
+  /*background: #FE980F;*/
+  background: purple;
   color: #FFF;
   -webkit-animation: bounce 2s ease infinite;
   animation: bounce 2s ease infinite;
@@ -2521,4 +2522,4 @@ h2.title {
 }
 
 
-   
+\00\00\00
