@@ -5,23 +5,28 @@ namespace Clientepazzo;
 class Prodotto{
 
     private $id;
-    private $descrizione;
+    private $nome;
     private $prezzo;
     private $quantita;
+    private $link;
 
-    public function __construct($id, $descrizione, $prezzo, $quantita){
+    public function __construct($id, $nome, $prezzo, $quantita, $link){
 	$this->setId($id);
-	$this->setDescrizione($descrizione);
+	$this->setNome($nome);
 	$this->setPrezzo($prezzo);
 	$this->setQuantita($quantita);
+	$this->setLink($link);
     }
 
     public function setId($id){
-	$this->id = $id;
+		$this->id = $id;
     }
 
-    public function setDescrizione($descrizione){
-        $this->descrizione = $descrizione;
+	public function setLink($link){
+		$this->link=$link;
+	}
+    public function setNome($nome){
+        $this->nome = $nome;
     }
 
     public function setPrezzo($prezzo){
@@ -36,8 +41,8 @@ class Prodotto{
 	return $this->id;
     }
 
-    public function getDescrizione(){
-        return $this->descrizione;
+    public function getNome(){
+        return $this->nome;
     }
 
     public function getPrezzo(){
@@ -47,4 +52,7 @@ class Prodotto{
     public function getQuantita(){
         return $this->quantita;
     }
+    public function getLink(){
+		return $this->link;
+	}
 }

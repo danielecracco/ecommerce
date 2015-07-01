@@ -5,8 +5,9 @@ namespace Clientepazzo;
 class Carrello{
 
     private $prodotti;
-
+    private $id_sessione;
     public function _construct(){
+	
 	$this->prodotti=array();
     }
 

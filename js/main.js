@@ -28,3 +28,32 @@ $(document).ready(function(){
 		});
 	});
 });
+
+$("buy").click
+(
+	function()
+	{
+		$.ajax
+            	(
+                	{
+                    		url:'http://locahost:8080/ecommerce/InserisciProdotto.php',
+                    		type:"POST",
+                    		data:JSON.stringify(data),
+                    		contentType:"application/json",
+                    		dataType:"json",
+                    		success: function(result)
+                    		{
+                        		$(result).each
+                        		(
+                            			function (i, item)
+                            			{
+							
+						}
+					)
+				}
+			}		
+		)
+	}
+);
+
+
