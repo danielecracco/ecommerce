@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "phpunit/phpunit": "^4.6"
+        "phpunit/phpunit": "^4.6",
+        "deployer/deployer": "^3.0"
     },
     "config": {
         "bin-dir": "bin"
