@@ -60,16 +60,7 @@
 							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									ITALIA
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Italia</a></li>
-									<li><a href="#">Estero</a></li>
-								</ul>
-							</div>
+							
 							
 							
 						</div>
@@ -112,16 +103,11 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
-					</div>
+					
 				</div>
             </div>
         </div><!--/header-bottom-->
 	</header><!--/header-->
-	
 	
 	
 	<section>
@@ -169,14 +155,14 @@
 									<div class="productinfo text-center">
 										<img src="images/shop/product12.jpg" alt="" />
 										<h2>$56</h2>
-										<a href="product-details.html"><p>Easy Polo Black Edition</p></a>
+										<a href="product-details.html"><p>Maglia blu</p></a>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>$56</h2>
-											<a href="product-details.html"><p>Easy Polo Black Edition</p></a>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<a href="product-details.html"><p>Maglia blu</p></a>
+											<a id="magliablu" href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
@@ -194,14 +180,14 @@
 									<div class="productinfo text-center">
 										<img src="images/shop/product11.jpg" alt="" />
 										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
+										<p>Jeans femminili</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<p>Jeans femminili</p>
+											<a href="#" id="jeansfemminili" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
@@ -219,14 +205,14 @@
 									<div class="productinfo text-center">
 										<img src="images/shop/product10.jpg" alt="" />
 										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
+										<p>Maglia femminile</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<p>Maglia femminile</p>
+											<a href="#" id="magliafemminile" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
@@ -244,14 +230,14 @@
 									<div class="productinfo text-center">
 										<img src="images/shop/product9.jpg" alt="" />
 										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
+										<p>Vestito cinese</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<p>Vestito cienese</p>
+											<a id="vestitocinese" href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 									<img src="images/home/new.png" class="new" alt="" />
@@ -270,14 +256,14 @@
 									<div class="productinfo text-center">
 										<img src="images/shop/product8.jpg" alt="" />
 										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
+										<p>Vestito da coniglietta</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											<p>Vestito da coniglietta</p>
+											<a href="#" id="vestitoconiglietta" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 									<img src="images/home/sale.png" class="new" alt="" />
@@ -405,5 +391,54 @@
 	<script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+        function inviaCarrello(nome, link, prezzo){
+            //alert(nome + " " + prezzo + ", " + link);
+            $.ajax({
+                type: "POST",
+                url: "InserisciProdotto.php",
+                data: "nome=" + nome + "&link=" + link + "&prezzo=" + prezzo,
+                dataType: "html",
+                success: function(msg)
+                {
+                    $("#risultato").html(msg);
+                },
+                error: function()
+                {
+                    alert("Chiamata fallita, si prega di riprovare...");
+                }
+            });
+        }
+        $('#magliablu').on('click', function(){
+            var link='images/shop/product12.jpg';
+            var nome='Maglia blu';
+            var prezzo='$56';
+            inviaCarrello(nome, link, prezzo);
+        });
+        $('#jeansfemminili').on('click', function(){
+            var link='images/shop/product11.jpg';
+            var nome='Jeans femminili';
+            var prezzo='$56';
+            inviaCarrello(nome, link, prezzo);
+        });
+        $('#magliafemminile').on('click', function(){
+            var link='images/shop/product10.jpg';
+            var nome='Maglia femminile';
+            var prezzo='$56';
+            inviaCarrello(nome, link, prezzo);
+        });
+        $('#vestitocinese').on('click', function(){
+            var link='images/shop/product19.jpg';
+            var nome='Vestito Cinese';
+            var prezzo='$56';
+            inviaCarrello(nome, link, prezzo);
+        });
+        $('#vestitoconiglietta').on('click', function(){
+            var link='images/shop/product8.jpg';
+            var nome='Vestito da coniglietta';
+            var prezzo='$56';
+            inviaCarrello(nome, link, prezzo);
+        });
+    </script>
 </body>
 </html>

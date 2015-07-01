@@ -6,13 +6,7 @@ class Carrello{
 
     private $prodotti;
 
-    private $id_sessione;
-
-    private $prezzoSpedizione;
-
-
     public function _construct(){
-	
 	$this->prodotti=array();
     }
 
@@ -34,10 +28,6 @@ class Carrello{
 	    $quantitaTotale += $this->prodotti[$i]->getQuantita();
 	}
 	return $quantitaTotale;
-    }
-
-    function setPrezzoSpedizione($destinazione, $express){
-
     }
 
    function getPrezzoTotale(){
