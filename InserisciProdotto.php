@@ -3,10 +3,10 @@ session_start();
 $nome=$_POST['nome'];
 $prezzo=$_POST['prezzo'];
 $link=$_POST['link'];
-include('src\Carrello.php');
-include('src\Prodotto.php');
+include('src/Carrello.php');
+include('src/Prodotto.php');
 
-$prodotto = new Prodotto(0,$nome,$prezzo,1,$link);
+$prodotto = new \Clientepazzo\Prodotto(0,$nome,$prezzo,1,$link);
 
 /*
 $prodottoService = new ProdottoService();
@@ -18,8 +18,10 @@ $prodotto= new Prodotto(1, 2, 3, );
 
 if (isset($_SESSION['carrello'])) {
 	$carrello = unserialize($_SESSION['carrello']);
+	echo "sessione attiva e trovata";
 } else {
-	$carrello = new Carrello();
+	$carrello = new \Clientepazzo\Carrello();
+	echo "sessione insesistente e creata";
 }
 
 $carrello->aggiungiProdotto($prodotto);
