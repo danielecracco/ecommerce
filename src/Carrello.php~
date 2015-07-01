@@ -5,7 +5,6 @@ namespace Clientepazzo;
 class Carrello{
 
     private $prodotti;
-    private $prezzoSpedizione;
 
     public function _construct(){
 	$this->prodotti=array();
@@ -29,13 +28,6 @@ class Carrello{
 	    $quantitaTotale += $this->prodotti[$i]->getQuantita();
 	}
 	return $quantitaTotale;
-    }
-
-    function setPrezzoSpedizione($destinazione, $express){
-
-	if ($destinazione == "Italia")
-		if express
-
     }
 
    function getPrezzoTotale(){
