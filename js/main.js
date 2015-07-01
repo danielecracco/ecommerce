@@ -1,11 +1,11 @@
 /*price range*/
 
- $('#sl2').slider();
+ /*$('#sl2').slider();
 
 	var RGBChange = function() {
 	  $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
 	};	
-		
+	*/	
 /*scroll to top*/
 
 $(document).ready(function(){
@@ -28,3 +28,32 @@ $(document).ready(function(){
 		});
 	});
 });
+
+$("buy").click
+(
+	function()
+	{
+		$.ajax
+            	(
+                	{
+                    		url:'http://locahost:8080/ecommerce/InserisciProdotto.php',
+                    		type:"POST",
+                    		data:JSON.stringify(data),
+                    		contentType:"application/json",
+                    		dataType:"json",
+                    		success: function(result)
+                    		{
+                        		$(result).each
+                        		(
+                            			function (i, item)
+                            			{
+							
+						}
+					)
+				}
+			}		
+		)
+	}
+);
+
+
