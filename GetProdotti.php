@@ -9,5 +9,5 @@ if (isset($_SESSION['carrello'])) {
 	$carrello = new \Clientepazzo\Carrello();
 	//$carrello = "sessione non esistente e carrello vuoto";
 }
-echo json_encode($carrello);
+echo $carrello->getJson();
 ?>

@@ -48,5 +48,14 @@ class Carrello{
         return $prezzoTotale;
 
    }
+   
+    function getJson(){
+        $json = "[";
+        for($i=0; $i < count($this->prodotti); $i++){
+            $json .= $this->prodotti[$i]->getJson().",";
+        }
+        $json = substr($json, 0, -1)."]";
+        return $json;
+    }
 
 }

@@ -55,4 +55,7 @@ class Prodotto{
     public function getLink(){
 		return $this->link;
 	}
+	public function getJson(){
+	    return "{\"nome\":\"".$this->nome."\", \"prezzo\":\"".$this->prezzo."\", \"link\":\"".$this->link."\"}";
+	}
 }
