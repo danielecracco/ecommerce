@@ -221,10 +221,10 @@
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Cart Sub Total <span>$59</span></li>
-							<li>Eco Tax <span>$2</span></li>
+							<li>Cart Sub Total <span id="totale1"></span></li>
+							
 							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>$61</span></li>
+							<li>Total <span id="totale2"></span></li>
 						</ul>
 							<a class="btn btn-default update" href="">Update</a>
 							<a class="btn btn-default check_out" href="checkout.html">Check Out</a>
@@ -407,11 +407,17 @@
                 dataType: "json",
                 success: function(msg)
                 {
+                    var totale=0;
                     console.log(msg);
                     for(i=0; i<msg.length;i++){
  
- $("#prova").append("<tr><td class='cart_product'><a href=''><img src='"+msg[i].link+"' alt=''></a></td><td class='cart_description'><h4><a href=''>"+msg[i].nome+"</a></h4><p>Web ID: 1089772</p></td><td class='cart_price'><p>"+msg[i].prezzo+"</p></td><td class='cart_quantity'><div class='cart_quantity_button'><a class='cart_quantity_up' href=''> + </a><input class='cart_quantity_input' type='text' name='quantity' value='1' autocomplete='off' size='2'><a class='cart_quantity_down' href=''> - </a></div></td><td class='cart_total'><p class='cart_total_price'>"+msg[i].prezzo+"</p></td><td class='cart_delete'><a class='cart_quantity_delete' href=''><i class='fa fa-times'></i></a></td></tr>");
+ $("#prova").append("<tr><td class='cart_product'><a href=''><img src='"+msg[i].link+"' alt=''></a></td><td class='cart_description'><h4><a href=''>"+msg[i].nome+"</a></h4><p>Web ID: 1089772</p></td><td class='cart_price'><p>"+msg[i].prezzo+"</p></td><td class='cart_price'><p>1</p></td><!--<td class='cart_quantity'><div class='cart_quantity_button'><a class='cart_quantity_down' href=''> - </a><input class='cart_quantity_input' type='text' name='quantity' value='1' autocomplete='off' size='2'><a class='cart_quantity_up' href=''> + </a></div></td>--><td class='cart_total'><p class='cart_total_price'>"+msg[i].prezzo+"</p></td><!--<td class='cart_delete'><a class='cart_quantity_delete' href=''><i class='fa fa-times'></i></a></td>--></tr>");
+                    totale += parseInt(msg[i].prezzo.substring(1));
+                    console.log(totale);
  }
+                    $("#totale1").append("$"+totale);
+                    $("#totale2").append("$"+totale);
+                   
                 },
                 error: function(err)
                 {
